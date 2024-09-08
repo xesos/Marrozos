@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackgroundTilemap
+    uniqueID: 3238783537
+    locked: 0
+  - name: PlatformsTilemap
+    uniqueID: 2770606647
+    locked: 0
