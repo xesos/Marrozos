@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D myFeetCollider;
     LayerMask myLayer;
     float gravityAtStart;
+    bool isALive = true;
     
     // Start is called before the first frame update
     void Start()
@@ -33,21 +34,28 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Run();
-        FlipSprite();
-        ClimbLadder();
+        if(isALive) {
+            Run();
+            FlipSprite();
+            ClimbLadder();
+            Die();
+        }
     }
 
     void OnMove(InputValue value) {
-        moveInput = value.Get<Vector2>();
-        Debug.Log(moveInput);
+        if(isALive) {
+            moveInput = value.Get<Vector2>();
+            Debug.Log(moveInput);
+        }
     }
 
     void OnJump(InputValue value) {
-        if(!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
-            return;
-        if (value.isPressed){
-            myRigidBody.velocity += new Vector2(0f, jumpSpeed);
+        if(isALive) {
+            if(!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+                return;
+            if (value.isPressed){
+                myRigidBody.velocity += new Vector2(0f, jumpSpeed);
+            }
         }
     }
 
@@ -79,5 +87,10 @@ public class PlayerMovement : MonoBehaviour
         bool playerHasVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon;
         myAnimator.SetBool("isClimbing",playerHasVerticalSpeed);
         
+    }
+    void Die(){
+        if(myCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))){
+            isALive=false;
+        }
     }
 }
