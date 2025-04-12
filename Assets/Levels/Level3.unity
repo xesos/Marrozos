@@ -61008,11 +61008,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.7190161, y: 13.001247}
-      - {x: -27.026264, y: 13.122364}
-      - {x: -26.88761, y: -4.681286}
-      - {x: 29.736044, y: -4.836212}
-      - {x: 29.703459, y: 12.837615}
+    - - {x: 1.1663239, y: 16.05785}
+      - {x: -33.421913, y: 16.32019}
+      - {x: -33.44812, y: -1.6246824}
+      - {x: 41.142395, y: -2.2269173}
+      - {x: 41.10981, y: 15.894218}
 --- !u!1 &1978326729
 GameObject:
   m_ObjectHideFlags: 0
@@ -61759,7 +61759,7 @@ PrefabInstance:
     - target: {fileID: 3982249813992506733, guid: 4b9cca5b8ecf99f4aa7e2ba4b0c8c6b3, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 818451017}
+      objectReference: {fileID: 1955724562}
     - target: {fileID: 3982249813992506733, guid: 4b9cca5b8ecf99f4aa7e2ba4b0c8c6b3, type: 3}
       propertyPath: m_ConfineScreenEdges
       value: 1
